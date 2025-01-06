@@ -1,0 +1,7 @@
+{
+  "name": "cbr-main",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

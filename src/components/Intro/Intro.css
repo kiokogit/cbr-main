@@ -1,0 +1,62 @@
+
+.swiper {
+    height: 100vh;
+    color: white;
+  }
+  .swiper-slide img {
+    height: 40vh;
+    margin-bottom: 40px;
+  }
+
+  .app_name {
+    height: 30vh;
+    margin-bottom: 50px;
+    font-family: 'Akaya';
+    font-size: 96px;
+  }
+
+  .app_name_full {
+    font-family: "Rochester";
+    font-size: xx-large;
+  }
+
+  .app_main_slogan {
+    font-family: Arial, sans-serif;
+    font-size: 14px; 
+    font-weight: 800;
+    margin-top: 2px;
+  }
+  .get_started_btn {
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+  }
+
+  .titles_content {
+    font-family: 'Arial';
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 40px;
+    margin-left: 30px;
+    margin-right: 30px
+  }
+
+  .content_ps {
+    font-family: 'Arial';
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 30px 0 30px;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+ion-content {
+    --background: linear-gradient(rgba(94, 136, 101, 1), rgba(24, 34, 25, 1));
+}
+

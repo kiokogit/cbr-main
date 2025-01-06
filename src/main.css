@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Rochester';
+    src: url('./assets/fonts/Rochester-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Akaya';
+    src: url('./assets/fonts/AkayaTelivigala-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto mono';
+    src: url('./assets/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    --color-white: #ffffff;
+    --size-xLarge: 24px;
+    --size-small: 12px;
+    --font-akaya: 'Akaya Telivigala', cursive;
+    --font-regular: 'Arial', sans-serif;
+}
+
+/* ion-content {
+    --background: linear-gradient(rgba(205, 202, 205, 1), rgba(205, 202, 205, 1));
+} */
+
