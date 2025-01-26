@@ -18,7 +18,7 @@ const SwiperButtonNext = ({ children }: any) => {
 
 const Intro: React.FC<ContainerProps> = ({ onFinish }) => {
   return (
-    <Swiper>
+    <Swiper className='into-page'>
       <SwiperSlide>
         {/* <img src={Intro1Svg} alt="Intro 1" /> */}
         <IonText className='app_name'>

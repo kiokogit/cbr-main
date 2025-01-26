@@ -2,7 +2,10 @@
 .swiper {
     height: 100vh;
     color: white;
+    background: linear-gradient(rgba(94, 136, 101, 1), rgba(24, 34, 25, 1));
   }
+  
+
   .swiper-slide img {
     height: 40vh;
     margin-bottom: 40px;
@@ -56,7 +59,7 @@
     text-align: center;
   }
 
-ion-content {
-    --background: linear-gradient(rgba(94, 136, 101, 1), rgba(24, 34, 25, 1));
-}
 
+.cl_ {
+  cursor: pointer;
+}

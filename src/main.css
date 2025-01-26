@@ -21,7 +21,11 @@
     --font-regular: 'Arial', sans-serif;
 }
 
-/* ion-content {
-    --background: linear-gradient(rgba(205, 202, 205, 1), rgba(205, 202, 205, 1));
-} */
+ion-toolbar {
+    --background: rgba(254, 247, 255, 1);
+    --border-style: none;
+  }
 
+ion-content {
+    --background: rgba(254, 247, 255, 1);
+}
