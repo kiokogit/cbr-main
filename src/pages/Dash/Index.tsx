@@ -11,10 +11,10 @@ import { ellipsisHorizontal, ellipsisVertical, notifications, personCircle } fro
 
 const Dash: React.FC = () => {
     const [cbrStatus, setCbrStatus] = useState({
-        enrolled: false,
+        enrolled: true,
         classEnrolled: {
             class_title: "JKUATCU CBR 2025",
-            class_status: "pending",
+            class_status: "ongoing",
             start_date: "2025-01-6",
         }
     })
