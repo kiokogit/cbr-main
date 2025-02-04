@@ -5,15 +5,16 @@ import {Card, CardBody, CardHeader} from "@heroui/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './styles.css'
 import {Button} from "antd";
-import {arrowForwardCircle} from "ionicons/icons";
+import {arrowForwardCircle, book, bookOutline, reload} from "ionicons/icons";
 import BottomNavBar from "./BottomBarComponent";
+import Icon from "antd/es/icon";
 
 const OngoingDash = (props: any) => {
 
     return (
         <IonGrid fixed style={{padding: '16px'}}>
             <IonRow class="ion-justify-content-center" style={{marginTop: 5}}>
-                <IonText style={{textAlign: 'center', color: 'grey', fontFamily: 'Roboto Mono'}}>JKUATCU CBR 2025</IonText>
+                <IonText style={{textAlign: 'center', color: 'grey', fontFamily: 'Roboto Mono', fontSize: '12px'}}>JKUATCU CBR 2025</IonText>
             </IonRow>
             <IonRow class="ion-justify-content-center" style={{ fontSize: '32px'}}>
                 <IonText className="app_name_full">
@@ -33,12 +34,50 @@ const OngoingDash = (props: any) => {
                 >
                     <SwiperSlide >
                         <Card className="dash_cards gradient-1">
-                            <CardBody>
-                                <div>
-                                    PROGRESS
+                            <CardBody style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%'}}>
+                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                                    <div style={{fontFamily: 'Roboto Mono', fontSize: '12px', display: 'flex', fontWeight: 'bold', flexDirection: 'row', justifyContent: 'flex-start'}}>
+                                        <div style={{width: '30px', height: '30px'}}>
+                                            <IonIcon icon={reload} size={'large'} color={'tertiary'}/>
+                                        </div>
+                                        <div style={{}}>
+                                            PROGRESS
+                                        </div>
+
+                                    </div>
+                                    <div style={{alignItems: 'flex-end', textAlign: 'right'}}>
+                                        <div style={{fontFamily: 'Rochester', fontSize: '32px'}}>
+                                            123
+                                        </div>
+                                        <div style={{fontFamily: 'Roboto Mono', fontSize: '10px', fontStretch:'50%', fontWeight: '100'}}>
+                                            Out of 1821 Chapters
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start'}}>
+                                    <div style={{width: '60px'}}>
+                                        <IonIcon size={'large'} icon={bookOutline} />
+                                    </div>
+                                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                                        <div>
+                                            <span style={{fontFamily: 'Roboto Mono', fontStretch: '50%', fontSize: '10px', fontWeight:'100', textAlign: 'left'}}>
+                                                You have read
+                                            </span>
+                                            <div style={{fontFamily: 'Rochester', fontSize: '64px',}}>
+                                                23%
+                                            </div>
+                                        </div>
+
+                                        <div style={{fontFamily: 'Roboto Mono', fontSize: '10px', textAlign: 'left', alignItems:'center', justifyContent: 'center', fontWeight:'100',}}>
+                                            <p>of the whole bible</p>
+                                            <p>#4 among your friends</p>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div>
-                                    123
+
                                 </div>
                             </CardBody>
                         </Card>
@@ -72,17 +111,35 @@ const OngoingDash = (props: any) => {
                 </div>
                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px'}}>
                     <Card className="info_cards">
-                        <CardBody>Chapters: 4</CardBody>
+                        <CardBody style={{ height: '100%', width: '100%'}}>
+                            <div style={{fontFamily: 'Roboto Mono', fontSize: '12px', textAlign: 'left', color: 'rgba(94, 136, 101, 0.85)'}}>
+                                Chapters
+                            </div>
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80px', width: '80px', margin: 'auto', marginTop: '10px',  border: ' black', borderRadius: '100%', backgroundColor: 'rgba(2, 39, 8, 0.33)', color: 'white', fontFamily: 'Rochester', fontSize: '48px'}}>
+                                4
+                            </div>
+                        </CardBody>
                     </Card>
                     <div style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
                         <Card className="info_cards" style={{height: '80px'}}>
                             <CardBody>
-                                ERT: 4.45am
+                                <div style={{fontFamily: 'Roboto Mono', fontSize: '12px', textAlign: 'left', color: 'rgba(94, 136, 101, 0.85)'}}>
+                                    ERT
+                                </div>
+                                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', margin: 'auto', marginTop: '5px',  border: ' black', borderRadius: '100%', fontFamily: 'Roboto Mono', fontSize: '16px'}}>
+                                    4.45am
+                                </div>
+
                             </CardBody>
                         </Card>
                         <Card className="info_cards" style={{height: '70px'}}>
                             <CardBody>
-                                RECITE: JOHN 1:24
+                                <div style={{fontFamily: 'Roboto Mono', fontSize: '12px', textAlign: 'left', color: 'rgba(94, 136, 101, 0.85)'}}>
+                                    Recite
+                                </div>
+                                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%', margin: 'auto', marginTop: '5px',  border: ' black', borderRadius: '100%', fontFamily: 'Roboto Mono', fontSize: '16px'}}>
+                                    John 1:24
+                                </div>
                             </CardBody>
                         </Card>
                     </div>

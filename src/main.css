@@ -13,6 +13,13 @@
     src: url('./assets/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
 }
 
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100&display=swap');*/
+
+/*.condensed-thin {*/
+/*    font-family: 'Roboto Condensed', sans-serif;*/
+/*    font-weight: 100; !* Very Thin *!*/
+/*}*/
+
 :root {
     --color-white: #ffffff;
     --size-xLarge: 24px;

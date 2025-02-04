@@ -7,6 +7,7 @@ import OngoingDash from '../../components/Dashboards/OngoingDash';
 import PendingStart from '../../components/Dashboards/PendingStart';
 import NotEnrolled from '../../components/Dashboards/NotEnrolled';
 import { ellipsisHorizontal, ellipsisVertical, notifications, personCircle } from 'ionicons/icons';
+import BottomNavBar from "../../components/Dashboards/BottomBarComponent";
 
 
 const Dash: React.FC = () => {
@@ -47,6 +48,7 @@ const Dash: React.FC = () => {
         {!cbrStatus.enrolled && <NotEnrolled requested_class={cbrStatus.classEnrolled} />}
         {cbrStatus.enrolled && cbrStatus.classEnrolled.class_status === "pending" && <PendingStart cbr={cbrStatus.classEnrolled} />}
         {cbrStatus.enrolled && cbrStatus.classEnrolled.class_status === "ongoing" && <OngoingDash cbr={cbrStatus.classEnrolled} />}
+
       </IonContent>
     </IonPage>
   );
