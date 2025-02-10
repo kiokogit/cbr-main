@@ -1,7 +1,7 @@
 import {
-    IonGrid, IonText, IonRow, IonIcon,
+    IonGrid, IonText, IonRow, IonIcon, IonAvatar,
 } from "@ionic/react";
-import {Card, CardBody, CardHeader, Image} from "@heroui/react";
+import {Avatar, Card, CardBody, CardHeader, Image} from "@heroui/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './styles.css'
 import {Button} from "antd";
@@ -13,6 +13,59 @@ import activityIcon from '../../assets/icons/activity.png'
 import {PageIndicator} from 'antd-mobile'
 import React from 'react';
 import { Timeline } from 'antd';
+
+import { IonProgressBar } from "@ionic/react";
+import avatarImg from "../../assets/images/kemal.jpg"
+
+interface ProgressProps {
+    progress: number; // Progress between 0 and 1 (e.g., 0.5 for 50%)
+}
+
+const otherUsers = [
+    {
+        avatar: avatarImg,
+        progress: 0.1
+    },
+    {
+        avatar: avatarImg,
+        progress: 0.2544
+    },
+    {
+        avatar: avatarImg,
+        progress: 0.2
+    }
+]
+
+const ProgressWithAvatar: React.FC<ProgressProps> = ({ progress }) => {
+    return (
+        <div style={{position: 'relative', width: '100%', marginTop: '-20px'}} >
+            {/* Progress Bar */}
+            <IonProgressBar value={progress} color={'tertiary'} style={{width:'100%', backgroundColor:'gray'}}/>
+
+            <div
+                style={{ left: `${(progress * 100)-6}%`, position: 'absolute', transform: 'inherit' }} // Move avatar along the bar
+            >
+                <IonAvatar >
+                    <img style={{width: '40px', height: '40px', border: '1px solid rgba(94, 136, 101, 1)'}} src={avatarImg} alt="Avatar" />
+                </IonAvatar>
+            </div>
+            {/* smaller ones*/}
+            {
+                otherUsers.map((user, i) => {
+                    return (
+                        <div key={i}
+                            style={{ left: `${user.progress * 100}%`, position: 'absolute', transform: 'inherit', marginTop: '10px' }} // Move avatar along the bar
+                        >
+                            <IonAvatar >
+                                <img style={{width: '20px', height: '20px', border: '1px solid rgba(94, 136, 101, 1)'}} src={user.avatar} alt="Avatar" />
+                            </IonAvatar>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    );
+};
 
 
 const OngoingDash = (props: any) => {
@@ -29,7 +82,7 @@ const OngoingDash = (props: any) => {
             </IonRow>
             <IonRow style={{marginTop: '16px'}}>
                 <Swiper
-                    style={{height: '200px', background: 'none', color: "red"}}
+                    style={{height: '215px', background: 'none', color: "red"}}
                     slidesPerView={1}
                     spaceBetween={16}
                     scrollbar={{ draggable: true }}
@@ -39,15 +92,14 @@ const OngoingDash = (props: any) => {
                     pagination={true}
                 >
                     <SwiperSlide >
-                        <Card className="dash_cards gradient-1">
-                            <CardBody style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%'}}>
+                        <div className="dash_cards gradient-1">
+                            <div style={{display: 'flex', flexDirection: 'column', justifyContent: '', width: '100%'}}>
                                 <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
                                     <div style={{fontFamily: 'Roboto Mono', fontSize: '12px', display: 'flex', fontWeight: 'bold', flexDirection: 'row', justifyContent: 'flex-start'}}>
                                         <img src={progressIcon} style={{width: '40px', height: '40px'}} alt={'progress'} />
                                         <p style={{}}>
                                             PROGRESS
                                         </p>
-
                                     </div>
                                     <div style={{alignItems: 'flex-end', textAlign: 'right'}}>
                                         <div style={{fontFamily: 'Rochester', fontSize: '32px'}}>
@@ -57,34 +109,32 @@ const OngoingDash = (props: any) => {
                                             Out of 1821 Chapters
                                         </div>
                                     </div>
-
                                 </div>
-                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                                    <div style={{width: '60px'}}>
+                                {/*<div style={{fontFamily: 'Roboto Mono', marginTop: '-20px',  fontStretch: '50%', fontSize: '10px', fontWeight:'100', textAlign: 'left'}}>*/}
+                                {/*    You have read*/}
+                                {/*</div>*/}
+                                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '-6px'}}>
+                                    <div style={{width: '67px', marginTop: '-10px'}}>
                                         <img src={openBookIcon} alt={'book open'} style={{width: '67px', height: '59px'}} />
                                     </div>
-                                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                                        <div>
-                                            {/*<span style={{fontFamily: 'Roboto Mono', fontStretch: '50%', fontSize: '10px', fontWeight:'100', textAlign: 'left'}}>*/}
-                                            {/*    You have read*/}
-                                            {/*</span>*/}
-                                            <div style={{fontFamily: 'Rochester', fontSize: '64px', display:'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
-                                                23%
-                                            </div>
+                                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'left'}}>
+
+                                        <div style={{lineHeight: '20px', fontFamily: 'Rochester', fontSize: '64px'}}>
+                                            23%
                                         </div>
 
                                         <div style={{fontFamily: 'Roboto Mono', fontSize: '10px', textAlign: 'left', alignItems:'center', justifyContent: 'center', fontWeight:'100',}}>
-                                            <p>of the whole bible</p>
-                                            <p>#4 among your friends</p>
+                                            <div>of the whole bible</div>
+                                            <div>#4 among your friends</div>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div>
-
+                                    <ProgressWithAvatar progress={0.45} />
                                 </div>
-                            </CardBody>
-                        </Card>
+                            </div>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide >
                         <Card className="dash_cards gradient-2">
@@ -198,8 +248,13 @@ const OngoingDash = (props: any) => {
                     </CardHeader>
                     <CardBody style={{backgroundColor: 'rgba(91, 118, 95, 0.94)', margin: '0px', padding: '15px', borderRadius: '10px'}}>
                         <Timeline
-                            mode="right"
-                            style={{color: 'white', fontSize: '9px'}}
+                            mode="left"
+                            pending={true}
+                            pendingDot={<IonAvatar style={{width: '40px', height: '40px', border: '1px solid rgba(94, 136, 101, 1)'}}>
+                                <img alt="Silhouette" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                            </IonAvatar>}
+                            reverse={true}
+                            style={{color: 'white', fontSize: '9px', textAlign: 'left'}}
                             items={[
                                 {
                                     children: <div className={'timeline_cards'}> Creaste a services site 2015-09-01 </div>,
