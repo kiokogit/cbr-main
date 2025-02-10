@@ -198,32 +198,38 @@ const OngoingDash = (props: any) => {
                     </CardHeader>
                     <CardBody style={{backgroundColor: 'rgba(91, 118, 95, 0.94)', margin: '0px', padding: '15px', borderRadius: '10px'}}>
                         <Timeline
-                            mode="alternate"
+                            mode="right"
                             style={{color: 'white', fontSize: '9px'}}
                             items={[
                                 {
                                     children: <div className={'timeline_cards'}> Creaste a services site 2015-09-01 </div>,
                                     color: 'rgba(217, 217, 217, 1)',
+                                    label: '2015-09-01',
                                 },
                                 {
                                     children: <div className={'timeline_cards'}> Solve initial network problems 2015-09-01' </div>,
                                     color: 'rgba(217, 217, 217, 1)',
+                                    label: '2015-09-01',
                                 },
                                 {
                                     children: <div className={'timeline_cards'}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium </div>,
                                     color: 'rgba(217, 217, 217, 1)',
+                                    label: '2015-09-01',
                                 },
                                 {
                                     color: 'rgba(217, 217, 217, 1)',
                                     children: <div className={'timeline_cards'}> Network problems being solved 2015-09-01 </div>,
+                                    label: '2015-09-01',
                                 },
                                 {
                                     children: <div className={'timeline_cards'}> Create a services site 2015-09-01 </div>,
                                     color: 'rgba(217, 217, 217, 1)',
+                                    label: '2015-09-01',
                                 },
                                 {
                                     children: <div className={'timeline_cards'}> Technical testing 2015-09-01 </div>,
                                     color: 'rgba(217, 217, 217, 1)',
+                                    label: '2015-09-01',
                                 },
                             ]}
                         />
